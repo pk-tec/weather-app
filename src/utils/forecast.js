@@ -17,7 +17,7 @@ const forecast = (lat, long, callback) => {
 		} else {
 			callback(
 				undefined,
-				`${resDec}: It currently ${resTemp} degree out. Chance of rain is ${rainChance}%`,
+				`${resDec}: It is currently ${resTemp} degrees out. Chance of rain is ${rainChance}%`,
 			);
 		}
 	});
