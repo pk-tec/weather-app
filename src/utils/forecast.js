@@ -7,6 +7,9 @@ const forecast = (lat, long, callback) => {
 		const resDec = body.location.name;
 		const resTemp = body.current.temperature;
 		const rainChance = body.current.precip;
+		const windSpeed = body.current.wind_speed;
+		const humidity = body.current.humidity;
+		const feelsLike = body.current.feelslike;
 		if (err) {
 			callback("Unable to connect to the location", undefined);
 		} else if (body.err) {
@@ -17,7 +20,11 @@ const forecast = (lat, long, callback) => {
 		} else {
 			callback(
 				undefined,
-				`${resDec}: It is currently ${resTemp} degrees out. Chance of rain is ${rainChance}%`,
+				`${resDec}: It is currently ${resTemp} degrees out.
+				Chance of rain is ${rainChance}% 
+				Humidity: ${humidity}
+				Feels Like: ${feelsLike}
+				Wind Speed: ${windSpeed}`,
 			);
 		}
 	});
